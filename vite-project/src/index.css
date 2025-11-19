@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: theme('colors.neutral-light');
+  --fg: theme('colors.neutral-dark');
+}
+
+html,body,#root{height:100%;}
+body{
+  @apply bg-neutral-light text-neutral-dark font-sans antialiased;
+}
+
+/* Utility: focus-visible outline for keyboard users */
+:focus-visible{outline:4px auto -webkit-focus-ring-color;outline-offset:3px}
+

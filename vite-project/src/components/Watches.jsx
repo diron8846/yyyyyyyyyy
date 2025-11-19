@@ -1,10 +1,70 @@
-import React, { useRef, useEffect, useState } from 'react'
+
+import watch1_400 from '../assets/images/watch1-400.jpg'
+import watch1_800 from '../assets/images/watch1-800.jpg'
+import watch1_1400 from '../assets/images/watch1-1400.jpg'
+import watch2_400 from '../assets/images/watch2-400.jpg'
+import watch2_800 from '../assets/images/watch2-800.jpg'
+import watch2_1400 from '../assets/images/watch2-1400.jpg'
+import watch3_400 from '../assets/images/watch3-400.jpg'
+import watch3_800 from '../assets/images/watch3-800.jpg'
+import watch3_1400 from '../assets/images/watch3-1400.jpg'
+import watch4_400 from '../assets/images/watch4-400.jpg'
+import watch4_800 from '../assets/images/watch4-800.jpg'
+import watch4_1400 from '../assets/images/watch4-1400.jpg'
+import watch5_400 from '../assets/images/watch5-400.jpg'
+import watch5_800 from '../assets/images/watch5-800.jpg'
+import watch5_1400 from '../assets/images/watch5-1400.jpg'
+import watch6_400 from '../assets/images/watch6-400.jpg'
+import watch6_800 from '../assets/images/watch6-800.jpg'
+import watch6_1400 from '../assets/images/watch6-1400.jpg'
+import watch7_400 from '../assets/images/watch7-400.jpg'
+import watch7_800 from '../assets/images/watch7-800.jpg'
+import watch7_1400 from '../assets/images/watch7-1400.jpg'
+import watch8_400 from '../assets/images/watch8-400.jpg'
+import watch8_800 from '../assets/images/watch8-800.jpg'
+import watch8_1400 from '../assets/images/watch8-1400.jpg'
 
 const watches = [
-  { title: 'Aurora Chrono', img: 'https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f2f7d0e5b6f' },
-  { title: 'Atlas Classic', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f1c' },
-  { title: 'Nero Minimal', img: 'https://images.unsplash.com/photo-1514995669114-9e6f0d4f4b3a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b3a' },
-  { title: 'Helio Sport', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f1c' },
+  {
+    title: 'Aurora Chrono',
+    img: watch1_800,
+    srcSet: `${watch1_400} 400w, ${watch1_800} 800w, ${watch1_1400} 1400w`
+  },
+  {
+    title: 'Atlas Classic',
+    img: watch2_800,
+    srcSet: `${watch2_400} 400w, ${watch2_800} 800w, ${watch2_1400} 1400w`
+  },
+  {
+    title: 'Nero Minimal',
+    img: watch3_800,
+    srcSet: `${watch3_400} 400w, ${watch3_800} 800w, ${watch3_1400} 1400w`
+  },
+  {
+    title: 'Helio Sport',
+    img: watch4_800,
+    srcSet: `${watch4_400} 400w, ${watch4_800} 800w, ${watch4_1400} 1400w`
+  },
+  {
+    title: 'Chrono Luxe',
+    img: watch5_800,
+    srcSet: `${watch5_400} 400w, ${watch5_800} 800w, ${watch5_1400} 1400w`
+  },
+  {
+    title: 'Solaris Edge',
+    img: watch6_800,
+    srcSet: `${watch6_400} 400w, ${watch6_800} 800w, ${watch6_1400} 1400w`
+  },
+  {
+    title: 'Midnight Steel',
+    img: watch7_800,
+    srcSet: `${watch7_400} 400w, ${watch7_800} 800w, ${watch7_1400} 1400w`
+  },
+  {
+    title: 'Vintage Gold',
+    img: watch8_800,
+    srcSet: `${watch8_400} 400w, ${watch8_800} 800w, ${watch8_1400} 1400w`
+  },
 ]
 
 export default function Watches(){
@@ -78,7 +138,14 @@ export default function Watches(){
                 className="snap-center flex-none min-w-[260px] md:min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden"
               >
                 <div className="relative h-56">
-                  <img loading="lazy" src={w.img} alt={w.title} className="object-cover w-full h-full" />
+                  <img
+                    loading="lazy"
+                    src={w.img}
+                    srcSet={w.srcSet}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
+                    alt={w.title}
+                    className="object-cover w-full h-full"
+                  />
                   <div className="absolute bottom-3 left-3 bg-black/50 text-white px-3 py-1 rounded text-sm">{w.title}</div>
                 </div>
                 <div className="p-4">
